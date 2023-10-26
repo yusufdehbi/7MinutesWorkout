@@ -18,6 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/colorPrimary" />
 
+
+
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
@@ -31,39 +33,13 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-     />
-
-    <ImageView
-        android:id="@+id/ivImage"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_jumping_jacks"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/tvExerciseName"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
         />
-    
-    <TextView
-        android:id="@+id/tvExerciseName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exercice Name"
-        android:textColor="@color/colorAccent"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/flExerciseView"
-        tools:visibility="visible"/>
-
     <FrameLayout
         android:id="@+id/flRestView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/item_circular_color_accent_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +78,60 @@
 
         </LinearLayout>
     </FrameLayout>
+    <TextView
+        android:id="@+id/tvUpcomingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPCOMING EXERCISE:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/flRestView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvUpcomingExerciseName"
+        />
+
+    <TextView
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpcomingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_jumping_jacks"
+        android:visibility="invisible"
+        tools:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tvExerciseName"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
+        />
+
+    <TextView
+        android:id="@+id/tvExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercice Name"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/flExerciseView"
+        tools:visibility="invisible"/>
     <FrameLayout
         android:id="@+id/flExerciseView"
         android:layout_width="100dp"
@@ -109,7 +139,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/item_circular_color_accent_border"
         android:visibility="invisible"
-        tools:visibility="visible"
+        tools:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
