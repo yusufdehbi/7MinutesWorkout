@@ -9,6 +9,7 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dehbideveloper.a7minutesworkout.databinding.ActivityExerciseBinding
 import java.lang.Exception
 import java.util.Locale
@@ -49,6 +50,14 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         tts = TextToSpeech(this, this)
 
         setupRestView()
+        setupExerciseStatusRecyclerView()
+    }
+
+    private fun setupExerciseStatusRecyclerView(){
+        binding?.rvExerciseStatus?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        exerciseAdapter = ExerciseStatusAdapter(exerciseList!!)
+        binding?.rvExerciseStatus?.adapter = exerciseAdapter
+
     }
 
     private fun setupRestView(){
