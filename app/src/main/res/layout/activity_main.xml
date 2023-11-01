@@ -43,8 +43,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/item_circular_color_accent_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@id/flHistory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flStart"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -60,17 +59,51 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculator"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
+        android:text="Calculator"
+        android:textColor="@color/colorAccent"
         android:textSize="@dimen/default_button_text_size"
         android:textStyle="bold"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@+id/flBMI"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/flBMI"
 
-        />
+
+        app:layout_constraintStart_toStartOf="@+id/flBMI"
+        app:layout_constraintTop_toBottomOf="@+id/flBMI" />
+
+    <FrameLayout
+        android:id="@+id/flHistory"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/item_circular_color_accent_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/flBMI"
+        app:layout_constraintTop_toBottomOf="@+id/flStart"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:src="@drawable/ic_history"
+            android:layout_gravity="center"
+
+            />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="History"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/default_button_text_size"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/flHistory"
+        app:layout_constraintStart_toStartOf="@+id/flHistory"
+        app:layout_constraintTop_toBottomOf="@+id/flHistory" />
 
 
 
