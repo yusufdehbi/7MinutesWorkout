@@ -4,8 +4,11 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dehbideveloper.a7minutesworkout.databinding.ActivityHistoryBinding
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -34,8 +37,24 @@ class HistoryActivity : AppCompatActivity() {
     private fun getAllCompletedDates(historyDao: HistoryDao){
         lifecycleScope.launch {
             historyDao.fetchAllDates().collect{datesList ->
-                for (i in datesList){
-                    Log.e("Date: ", ""+i)
+                if (datesList.isNotEmpty()){
+                    binding?.tvExerciseCompleted?.visibility = View.VISIBLE
+                    binding?.rvHistory?.visibility = View.VISIBLE
+                    binding?.tvNoData?.visibility = View.INVISIBLE
+
+                    binding?.rvHistory?.layoutManager = LinearLayoutManager(applicationContext)
+
+                    val dates = ArrayList<String>()
+                    for(date in datesList){
+                        dates.add(date.date)
+                    }
+                    val historyAdapter = HistoryAdapter(dates)
+                    binding?.rvHistory?.adapter = historyAdapter
+
+                } else {
+                    binding?.tvExerciseCompleted?.visibility = View.INVISIBLE
+                    binding?.rvHistory?.visibility = View.INVISIBLE
+                    binding?.tvNoData?.visibility = View.VISIBLE
                 }
             }
         }

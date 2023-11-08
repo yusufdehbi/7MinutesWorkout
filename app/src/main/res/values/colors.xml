@@ -9,4 +9,5 @@
     <color name="lightGrey">#C4C4C4</color>
 
     <color name="toolbar_color_control_normal">#000000</color>
+    <color name="darkGrey">#272727</color>
 </resources>
