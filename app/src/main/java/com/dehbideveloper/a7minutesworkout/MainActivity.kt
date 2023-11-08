@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
         }
+
+
+
+
     }
 
     override fun onDestroy() {
